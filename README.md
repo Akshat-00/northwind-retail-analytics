@@ -18,10 +18,11 @@ Designed a **star-schema warehouse**, automated SQL transforms, added **data qua
                             \           /
                            dim_product
                                  |
-dim_date   dim_customer   dim_employee   dim_shipper
-    \           |               |             /
-     \          |               |            /
-                fact_order_items
+                                 |
+      dim_date   dim_customer   dim_employee   dim_shipper
+        \           |               |             /
+         \          |               |            /
+                    fact_order_items
 
 **Fact:** `mart.fact_order_items(orderdetail_id, order_id, date_key, customer_key, product_key, employee_key, shipper_key, quantity, unit_price, discount=0, line_revenue)`  
 **Dims:** `dim_date`, `dim_customer`, `dim_product` (snowflaked to `dim_category`, `dim_supplier`), `dim_employee`, `dim_shipper`
