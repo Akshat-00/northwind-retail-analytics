@@ -26,6 +26,7 @@ Designed a **star-schema warehouse**, automated SQL transforms, added **data qua
 
 **Fact:** `mart.fact_order_items(orderdetail_id, order_id, date_key, customer_key, product_key, employee_key, shipper_key, quantity, unit_price, discount=0, line_revenue)`  
 **Dims:** `dim_date`, `dim_customer`, `dim_product` (snowflaked to `dim_category`, `dim_supplier`), `dim_employee`, `dim_shipper`
+
 **Note:** Source `orderdetails` lacked UnitPrice/Discount, so **unit_price** comes from product price and **discount=0** (documented assumption).
 
 ## 📊 Dashboard (Power BI)
